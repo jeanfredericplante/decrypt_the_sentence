@@ -13,3 +13,8 @@ Once in the pipenv environment
 `python generate_pdf.py "the cat is in the hat"`
 
 By default it generates with the 4 operands (+,-,*,/).  You can change the operands in the main function.
+
+## Output
+Creates a pdf file
+![Example pdf file](https://github.com/jeanfredericplante/decrypt_the_sentence/raw/master/break_code.jpg)
+
