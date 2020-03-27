@@ -14,6 +14,8 @@ Once in the pipenv environment
 
 By default it generates with the 4 operands (+,-,*,/).  You can change the operands in the main function.
 
+You can also copy a Collab jupyter [notebook](https://colab.research.google.com/drive/14Fl3wBSovtBK0PcrBGq6q0au12zPCUo6) 
+
 ## Output
 Creates a pdf file
 ![Example pdf file](https://github.com/jeanfredericplante/decrypt_the_sentence/raw/master/break_code.jpg)
