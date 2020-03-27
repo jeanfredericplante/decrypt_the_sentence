@@ -20,3 +20,5 @@ You can also copy a Collab jupyter [notebook](https://colab.research.google.com/
 Creates a pdf file
 ![Example pdf file](https://github.com/jeanfredericplante/decrypt_the_sentence/raw/master/break_code.jpg)
 
+## Similar project
+https://github.com/jeanfredericplante/scrambled_book
