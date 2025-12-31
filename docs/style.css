@@ -1,95 +1,151 @@
 :root {
-    --primary-color: #3f51b5;
-    --secondary-color: #f50057;
-    --bg-color: #f4f4f9;
+    --primary-color: #333;
+    --accent-color: #ff6b6b;
+    --bg-color: #fafafa;
     --text-color: #333;
-    --font-heading: 'Roboto', sans-serif;
-    --font-body: 'Roboto', sans-serif;
-    --font-mono: 'Courier Prime', monospace;
+    --font-family: 'Courier New', Courier, monospace;
 }
 
 body {
-    font-family: var(--font-body);
+    font-family: var(--font-family);
     background-color: var(--bg-color);
     color: var(--text-color);
     margin: 0;
-    padding: 20px;
+    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
+    padding-top: 50px;
 }
 
 /* Screen Layout */
 .container {
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    max-width: 800px;
+    background-color: transparent;
+    padding: 2rem;
+    box-shadow: none;
+    max-width: 700px;
     width: 100%;
-    margin-bottom: 30px;
-    text-align: center;
 }
 
-h1 {
-    font-family: var(--font-heading);
-    color: var(--primary-color);
-    margin-top: 0;
+header {
+    text-align: left;
+    margin-bottom: 3rem;
+    border-bottom: 4px solid var(--text-color);
+    padding-bottom: 1rem;
 }
 
-textarea {
-    width: 100%;
-    height: 100px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    margin-bottom: 20px;
-    box-sizing: border-box;
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+    color: var(--text-color);
+    letter-spacing: -2px;
+}
+
+header p {
+    color: #666;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
 }
 
 .controls {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    align-items: center;
+    gap: 2rem;
+}
+
+.form-group {
+    margin-bottom: 0; /* Handled by gap */
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+textarea {
+    width: 100%;
+    padding: 1rem;
+    background-color: white;
+    border: 2px solid var(--text-color);
+    border-radius: 0;
+    font-size: 1rem;
+    font-family: inherit;
+    box-sizing: border-box;
+    transition: all 0.2s;
+    height: 150px;
+}
+
+textarea:focus {
+    outline: none;
+    background-color: #fff0f0;
+    border-color: var(--accent-color);
 }
 
 .options {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .checkbox-group {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
+}
+
+.checkbox-group label {
+    font-size: 1rem;
+    text-transform: none;
+    letter-spacing: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
 }
 
 button {
-    background-color: var(--primary-color);
+    width: 100%;
+    padding: 1.2rem;
+    background-color: var(--text-color);
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-size: 16px;
+    border-radius: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.1s, box-shadow 0.1s;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.2);
+    margin-bottom: 1rem;
 }
 
 button:hover {
-    background-color: #303f9f;
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0px rgba(0,0,0,0.2);
+    background-color: #000;
+}
+
+button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.2);
 }
 
 button.secondary {
-    background-color: #757575;
+    background-color: #fff;
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.1);
 }
 
 button.secondary:hover {
-    background-color: #616161;
+    background-color: #f0f0f0;
+    box-shadow: 7px 7px 0px rgba(0,0,0,0.1);
 }
 
 /* Worksheet Layout */
@@ -102,6 +158,8 @@ button.secondary:hover {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     display: none; /* Hidden by default until generated */
     flex-direction: column;
+    margin-top: 40px;
+    border: 1px solid #ccc; /* Subtle border for screen view */
 }
 
 .sheet-header {
@@ -109,7 +167,7 @@ button.secondary:hover {
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: 30px;
-    border-bottom: 2px solid black;
+    border-bottom: 4px solid black; /* Thicker for retro feel */
     padding-bottom: 10px;
 }
 
@@ -117,11 +175,13 @@ button.secondary:hover {
     margin: 0;
     font-size: 24pt;
     text-transform: uppercase;
+    font-family: var(--font-family);
 }
 
 .name-date {
     text-align: right;
     font-size: 12pt;
+    font-family: var(--font-family);
 }
 
 .name-date .field {
@@ -133,14 +193,14 @@ button.secondary:hover {
     grid-template-columns: repeat(2, 1fr); /* 2 columns */
     gap: 10px 40px;
     margin-bottom: 40px;
-    font-family: var(--font-mono);
+    font-family: var(--font-family);
     font-size: 14pt;
 }
 
 .key-item {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px dotted #ccc;
+    border-bottom: 2px dotted #333; /* Thicker dots */
     padding-bottom: 2px;
 }
 
@@ -173,13 +233,12 @@ button.secondary:hover {
 .char-box {
     width: 100%;
     height: 40px;
-    border: 2px solid black;
+    border: 3px solid black; /* Thicker box */
     margin-bottom: 5px;
-    /* The letter goes here if we want to show answer, but usually it's empty */
 }
 
 .char-number {
-    font-family: var(--font-mono);
+    font-family: var(--font-family);
     font-size: 12pt;
     font-weight: bold;
 }
@@ -191,6 +250,7 @@ button.secondary:hover {
     color: #888;
     border-top: 1px solid #eee;
     padding-top: 10px;
+    font-family: var(--font-family);
 }
 
 /* Print Styles */
@@ -218,5 +278,7 @@ button.secondary:hover {
         min-height: 100vh;
         padding: 15mm;
         margin: 0;
+        border: none;
+        margin-top: 0;
     }
 }
