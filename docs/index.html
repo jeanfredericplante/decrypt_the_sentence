@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break the Code! - Secret Message Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="no-print container">
+        <header>
+            <h1>Break the Code!</h1>
+            <p>Enter a secret message below and generate a math worksheet to decode it.</p>
+        </header>
+
+        <div class="controls">
+            <textarea id="messageInput" placeholder="Enter your secret message here... (e.g., The cat is in the hat)"></textarea>
+            <div class="options">
+                <label>Operations:</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" id="opAdd" checked> Add (+)</label>
+                    <label><input type="checkbox" id="opSub" checked> Subtract (-)</label>
+                    <label><input type="checkbox" id="opMul" checked> Multiply (x)</label>
+                    <label><input type="checkbox" id="opDiv" checked> Divide (/)</label>
+                </div>
+            </div>
+            <button onclick="generateWorksheet()">Generate Worksheet</button>
+            <button onclick="window.print()" class="secondary">Print</button>
+        </div>
+    </div>
+
+    <div id="worksheet" class="worksheet">
+        <div class="sheet-header">
+            <h2>Break the Code!</h2>
+            <div class="name-date">
+                <div class="field">Name: ____________________</div>
+                <div class="field">Date: ____________________</div>
+            </div>
+        </div>
+
+        <div id="keySection" class="key-section">
+            <!-- Operations key will be generated here -->
+        </div>
+
+        <div id="messageSection" class="message-section">
+            <!-- Encoded message will be generated here -->
+        </div>
+
+        <div class="sheet-footer">
+            <p>Generated with Break the Code!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
