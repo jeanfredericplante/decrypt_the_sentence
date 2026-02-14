@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break the Code! - Secret Message Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- No external fonts needed for Courier New, but keeping font links if we want a fallback or specific web font later is fine.
+         Removing them for pure retro feel or keeping them if they were used for specific icons?
+         The target site uses system monospace. I'll rely on CSS. -->
+</head>
+<body>
+
+    <div class="no-print container">
+        <header>
+            <h1>Break the Code!</h1>
+            <p>Generate secret message worksheets with math problems.</p>
+        </header>
+
+        <div class="controls">
+            <div class="form-group">
+                <label for="messageInput">Secret Message:</label>
+                <textarea id="messageInput" placeholder="Enter your secret message here..."></textarea>
+            </div>
+
+            <div class="form-group options">
+                <label>Operations:</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" id="opAdd" checked> Add (+)</label>
+                    <label><input type="checkbox" id="opSub" checked> Subtract (-)</label>
+                    <label><input type="checkbox" id="opMul" checked> Multiply (x)</label>
+                    <label><input type="checkbox" id="opDiv" checked> Divide (/)</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button onclick="generateWorksheet()">Generate Worksheet</button>
+                <button onclick="window.print()" class="secondary">Print</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="worksheet" class="worksheet">
+        <div class="sheet-header">
+            <h2>Break the Code!</h2>
+            <div class="name-date">
+                <div class="field">Name: ____________________</div>
+                <div class="field">Date: ____________________</div>
+            </div>
+        </div>
+
+        <div id="keySection" class="key-section">
+            <!-- Operations key will be generated here -->
+        </div>
+
+        <div id="messageSection" class="message-section">
+            <!-- Encoded message will be generated here -->
+        </div>
+
+        <div class="sheet-footer">
+            <p>Generated with Break the Code!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
